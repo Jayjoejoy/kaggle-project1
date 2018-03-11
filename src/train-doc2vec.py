@@ -37,6 +37,7 @@ for index, row in train_data.iterrows():
 model = models.Doc2Vec(size = 100, window = 200, min_count = 3, workers = 1)
 vocab = model.build_vocab(ess1_list)
 model.train(ess1_list, epochs=10, total_words=100)
+model.save("ess1_model.doc2vec")
 # model_loaded = models.Doc2Vec.load('ess1_model.doc2vec')
 # print "the first vector is: "
 # print model.docvecs[0]
